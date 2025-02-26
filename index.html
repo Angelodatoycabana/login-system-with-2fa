@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System with 2FA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="loginContainer">
+    <h1>Login</h1>
+    <div class="message" id="message"></div>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+</div>
+
+<div class="container" id="registerContainer" style="display:none;">
+    <h1>Register</h1>
+    <div class="message" id="registerMessage"></div>
+    <input type="text" id="newUsername" placeholder="Username" required>
+    <input type="password" id="newPassword" placeholder="Password" required>
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+</div>
+
+<div class="container" id="2faContainer" style="display:none;">
+    <h1>Two-Factor Authentication</h1>
+    <div class="message" id="2faMessage"></div>
+    <input type="hidden" id="2faUsername">
+    <input type="text" id="2faCode" placeholder="Enter 2FA Code" required>
+    <button onclick="verify2FA()">Verify</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
